@@ -1,24 +1,64 @@
 body {
-	background: #3c7d33;
+    background: url(./img1.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    margin: 6px;
 }
+
 .app {
+    height: 84%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 .checker {
+    position: static;
 	display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+.header, .footer {
+    padding: 6px;
+    margin: 6px;
+    position: static;
+}
+.header_buttons {
+    display: flex;
+    justify-content: space-between;
+}
+.header_texts {
+    display: flex;
+    justify-content: center;
+}
+.footer_buttons {
+    display: flex;
+    justify-content: space-around;
+}
+.footer_texts {
+    display: flex;
+    justify-content: center;
+}
+
+.but32x {
+    width: 32px;
+    height: 32px;
+}
+.but48x {
+    width: 48px;
+    height: 48px;
+}
+
 .plantzone {
+    position: static;
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
-	background: url(./gradb.png) no-repeat center/50%;
     height: 360px;
     width: 360px;
 }
@@ -28,9 +68,17 @@ body {
     width: 144px;
 }
 .plant {
-	height: 64px;
-    width: 64px;
+    height: 82%;
 }
 .timerplant {
 	font-size: 24px;
+}
+
+.propsplant {
+    position: absolute;
+}
+.props1 {
+    z-index: -1;
+    width: 360px;
+    height: 360px;
 }

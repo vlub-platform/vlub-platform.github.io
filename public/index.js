@@ -8,8 +8,8 @@ function entplant() {
 	if(processplant > 4) {
 		processplant = 1;
 	}
-	imgplant = "claim0"+processplant+".png"
-	document.getElementById("plant").src = "./public/"+imgplant;
+	//imgplant = "claim0"+processplant+".png"
+	//document.getElementById("plant").src = "./public/"+imgplant;
 }
 
 

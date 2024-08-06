@@ -1,36 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8"/>
     <script src="https://telegram.org/js/telegram-web-app.js">
       const tg = window.Telegram.WebApp;
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <script src="public/index.js"></script>
-    <script src="unpkg.com/file-system/file-system.js"></script>
     <title>Web App</title>
     <link rel="stylesheet" href="./public/style.css">
   </head>
   <body>
+    <header class="header">
+      <div class="header_buttons">
+        <button class="but48x"><</button>
+        <button onclick="clck()">check</button>
+        <button onclick="entplant()">entplant</button>
+        <button class="but48x">></button>
+      </div>
+      <div class="header_texts"> 
+        <h1 id="xuid">00000000</h1>
+      </div>
+    </header>
     <div class="app">
       <script>
         const telegram = window.Telegram.WebApp;
         function clck() {
           if (telegram.initDataUnsafe && telegram.initDataUnsafe.user) {
-            document.getElementById('xuid').innerText = "user id: " + telegram.initDataUnsafe.user.id;
+            document.getElementById('xuid').innerText = "" + telegram.initDataUnsafe.user.id;
           }
         }
+        function timerUpdate() {
+          const date = new Date();
+          curTimer = `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`
+          document.getElementById('timerplnt').innerText = curTimer;
+        }
       </script>
-      <div class="checker">
-        <h1 id="xuid">user id:</h1>
-        <button onclick="clck()">check</button>
-        <button onclick="entplant()">entplant</button>
-      </div>
       <div class="plantzone">
-        <img id="plant"src="./public/claim01.png"class="plant"></img>
-        <span class="timerplant">00:00:00</span>
+        <img id="plant"src="./public/img2.png"class="plant"></img>
+        <span id="timerplnt" class="timerplant">00:00:00</span>
+        <button class="claimbutton" onclick="timerUpdate()">claim</button>
       </div>
-      <button class="claimbutton" onclick="claimplant()">claim</button>
     </div>
+    <footer class="footer">
+      <div class="footer_buttons">
+        <button class="but48x" onclick="">game</button>
+        <button class="but48x" onclick="">boost</button>
+        <button class="but48x" onclick="">top</button>
+      </div>
+    </footer>
   </body>
 </html>
